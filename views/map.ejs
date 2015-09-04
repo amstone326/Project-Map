@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+    	html, body { height: 100%; margin: 0; padding: 0; }
+      	#map { height: 100%; }
+    </style>
+</head>
+<body>
+	<div id='map'></div>
+
+	<!-- GoogleMaps API -->
+	<script async defer 
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB67ieAU58m32BYs9WuUqICD96FvIdZm8k&callback=initMap">
+    </script>
+
+     <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript">
+        var map;
+        var geocodeService;
+
+        var projects = [
+        {
+            "id": "e669a3df718d1e097ba78c6177910873",
+            "key": "medical-mission",
+            "value": null,
+            "doc": {
+                "_id": "e669a3df718d1e097ba78c6177910873",
+                "_rev": "14-a7296c68af56f334a03c7b2916f88087",
+                "cda": {
+                    "doc_type": "LicenseAgreement",
+                    "user_id": null,
+                    "signed": false,
+                    "user_ip": null,
+                    "version": null,
+                    "date": null,
+                    "type": null
+                },
+                "chat_message_count_threshold": null,
+                "case_sharing": false,
+                "full_downloads": 0,
+                "count_messages_as_read_by_anyone": false,
+                "show_invalid_survey_responses_in_chat": false,
+                "default_sms_backend_id": "",
+                "sms_case_registration_owner_id": "db4b1cdd2213f85a25f21e30a8a21e9f",
+                "multimedia_included": true,
+                "sms_conversation_length": 10,
+                "sub_area": null,
+                "copy_history": [],
+                "area": null,
+                "image_type": null,
+                "description": null,
+                "cloudcare_releases": "nostars",
+                "filter_surveys_from_chat": false,
+                "internal": {
+                    "goal_followup_rate": null,
+                    "can_use_data": true,
+                    "sub_area": null,
+                    "using_adm": false,
+                    "project_manager": "",
+                    "initiative": [],
+                    "platform": [],
+                    "custom_eula": false,
+                    "phone_model": "",
+                    "sf_contract_id": "",
+                    "using_call_center": false,
+                    "area": "",
+                    "self_started": true,
+                    "project_state": "",
+                    "goal_time_period": null,
+                    "organization_name": "Wide Horizons",
+                    "commcare_edition": "community",
+                    "services": "",
+                    "commtrack_domain": null,
+                    "workshop_region": null,
+                    "doc_type": "InternalProperties",
+                    "sf_account_id": "",
+                    "notes": "",
+                    "commconnect_domain": null
+                },
+                "is_snapshot": false,
+                "sms_case_registration_user_id": "82b659eb0ee74bd1f39534f545da456f",
+                "billing_address": {
+                    "state_province": null,
+                    "doc_type": "HQBillingAddress",
+                    "name": null,
+                    "city": null,
+                    "country": null,
+                    "postal_code": null,
+                    "address": []
+                },
+                "default_sms_response": null,
+                "restricted_sms_times": [],
+                "is_active": true,
+                "default_timezone": "UTC",
+                "cached_properties": {},
+                "deployment": {
+                    "doc_type": "Deployment",
+                    "description": "",
+                    "countries": [
+                        "ET"
+                    ],
+                    "country": "Ethiopia",
+                    "region": "",
+                    "city": "",
+                    "date": "2014-02-10T00:00:00Z",
+                    "public": false
+                },
+                "is_public": false,
+                "dynamic_reports": [],
+                "is_shared": false,
+                "doc_type": "Domain",
+                "creating_user": "widehorizonsmhealth@gmail.com",
+                "name": "medical-mission",
+                "case_display": {
+                    "doc_type": "CaseDisplaySettings",
+                    "form_details": {},
+                    "case_details": {}
+                },
+                "yt_id": null,
+                "customer_type": "basic",
+                "commconnect_enabled": false,
+                "has_careplan": false,
+                "hr_name": null,
+                "currency_code": "USD",
+                "custom_case_username": null,
+                "eula": {
+                    "doc_type": "LicenseAgreement",
+                    "user_id": null,
+                    "signed": false,
+                    "user_ip": null,
+                    "date": null,
+                    "type": null
+                },
+                "project_type": "",
+                "restrict_superusers": false,
+                "secure_submissions": false,
+                "is_test": "false",
+                "location_restriction_for_users": false,
+                "image_path": null,
+                "ota_restore_caching": false,
+                "is_approved": false,
+                "author": null,
+                "tags": [],
+                "migrations": {
+                    "doc_type": "DomainMigrations",
+                    "has_migrated_permissions": true
+                },
+                "default_mobile_worker_redirect": null,
+                "use_default_sms_response": false,
+                "send_to_duplicated_case_numbers": true,
+                "short_description": null,
+                "survey_management_enabled": false,
+                "is_sms_billable": null,
+                "custom_chat_template": null,
+                "snapshot_time": null,
+                "phone_model": null,
+                "downloads": 0,
+                "call_center_config": {
+                    "doc_type": "CallCenterProperties",
+                    "case_type": null,
+                    "enabled": false,
+                    "case_owner_id": null
+                },
+                "sms_mobile_worker_registration_enabled": false,
+                "sms_case_registration_type": "",
+                "publisher": "user",
+                "organization": null,
+                "license": "cc",
+                "billing_number": null,
+                "title": null,
+                "attribution_notes": null,
+                "sms_case_registration_enabled": false,
+                "commtrack_enabled": false,
+                "published": false,
+                "billable_client": null,
+                "date_created": "2013-06-19T16:18:11Z",
+                "sms_conversation_times": [] 
+            }
+        }];
+
+		function initMap() {
+  			map = new google.maps.Map(document.getElementById('map'), {
+    			center: {lat: 0, lng: 0},
+    			zoom: 3
+  			});
+
+            geocodeService = new google.maps.Geocoder();
+            createMarkers(map);
+		}
+
+        function createMarkers(map) {
+            var image = {
+                url: 'http://maps.google.com/mapfiles/kml/paddle/blu-stars-lv.png',          
+            };
+
+            $.get('/getProjects', function(projects) {
+                console.log(projects.length);
+            });
+
+            /*for (var i = 0; i < projects.length; i++) {
+                var project = projects[i];
+                var domain_name = project.doc.name;
+                var locationString = project.doc.deployment.country;
+                getPosition(locationString, function(latlng) {
+                    var marker = new google.maps.Marker({
+                        position: latlng,
+                        map: map,
+                        icon: image,
+                        title: domain_name
+                    });
+                });
+            }*/
+        } 
+
+        function getPosition(locationString, callback) {
+            var geocodeRequest = {
+                address:locationString
+            };
+            geocodeService.geocode(geocodeRequest, function(response, status) {
+                callback(response[0].geometry.location);
+            });
+        }
+    </script>
+</body>
