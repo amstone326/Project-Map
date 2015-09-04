@@ -1,0 +1,27 @@
+{
+  "name": "Dimagi-Map",
+  "version": "0.10.33",
+  "main": "app.js",
+  "engines": {
+    "npm": "1.4.28"
+  },
+  "keywords": [
+    "node.js",
+    "eclipse",
+    "nodeclipse"
+  ],
+  "dependencies": {
+    "body-parser": "*",
+    "cookie-parser": "*",
+    "ejs": "*",
+    "ejs-locals": "*",
+    "express": "4.x",
+    "express-session": "*",
+    "foobar": "^1.1.0",
+    "lru-cache": "2.5.x",
+    "node-sha1": "0.0.1",
+    "request": "*"
+  },
+  "author": "",
+  "readmeFilename": "README.md"
+}
